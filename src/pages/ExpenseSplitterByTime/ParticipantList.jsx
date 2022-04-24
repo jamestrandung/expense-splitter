@@ -23,6 +23,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { v4 as uuidv4 } from 'uuid';
 import Participant from './Participant';
 import { getLocalItem, saveLocalItem, removeLocalItem } from '../../helpers/storage';
+import styles from './style.module.css';
 
 function calculatePayables(participants, totalPrice, startTime, endTime) {
   let duration = endTime.diff(startTime, 'minute');
@@ -132,6 +133,8 @@ function ParticipantList({
     onCompleteSession();
   };
 
+  console.log(styles.participantTime);
+
   return (
     <Grid container spacing={3} style={{ marginTop: '10px', marginBottom: '20px' }}>
       <Grid item xs={12}>
@@ -187,9 +190,9 @@ function ParticipantList({
             <Table sx={{ minWidth: 650 }} stickyHeader>
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ width: '25px' }} />
-                  <TableCell style={{ fontWeight: 'bold' }}>Start time</TableCell>
-                  <TableCell style={{ fontWeight: 'bold' }}>End time</TableCell>
+                  <TableCell style={{ width: 10 }} />
+                  <TableCell style={{ fontWeight: 'bold' }} className={styles.participantTime}>Start time</TableCell>
+                  <TableCell style={{ fontWeight: 'bold' }} className={styles.participantTime}>End time</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>Name</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>Payable</TableCell>
                 </TableRow>
