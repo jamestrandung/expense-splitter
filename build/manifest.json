@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Expense splitter",
+  "name": "Split any expenses by time",
   "icons": [
     {
       "src": "favicon.ico",
