@@ -24,7 +24,12 @@ import { v4 as uuidv4 } from 'uuid';
 import Participant from './Participant';
 import { getLocalItem, saveLocalItem, removeLocalItem } from '../../helpers/storage';
 
-function calculatePayables(participants, pricePerMinute, startTime, endTime) {
+function calculatePayables(participants, totalPrice, startTime, endTime) {
+  let duration = endTime.diff(startTime, 'minute');
+  duration = duration > 0 ? duration : 1440 + duration;
+
+  const pricePerMinute = totalPrice / duration;
+
   const payables = {};
 
   let start = startTime;
@@ -65,11 +70,6 @@ const localStorageKey = 'expenseSplitterByTime.participants';
 function ParticipantList({
   onCompleteSession, totalPrice, startTime, endTime, isCrossingDay,
 }) {
-  let duration = endTime.diff(startTime, 'minute');
-  duration = duration > 0 ? duration : 1440 + duration;
-
-  const pricePerMinute = totalPrice / duration;
-
   const [participants, setParticipants] = React.useState([]);
   const [payables, setPayables] = React.useState({});
 
@@ -85,7 +85,7 @@ function ParticipantList({
   }, []);
 
   React.useEffect(() => {
-    const newPayables = calculatePayables(participants, pricePerMinute, startTime, endTime);
+    const newPayables = calculatePayables(participants, totalPrice, startTime, endTime);
     setPayables(newPayables);
   }, [participants]);
 

@@ -20,13 +20,15 @@ function Participant({
       return null;
     }
 
-    if (!newTime.isBefore(startTime) && !newTime.isAfter(endTime)) {
+    const cleanNewTime = newTime.millisecond(0);
+
+    if (!cleanNewTime.isBefore(startTime) && !cleanNewTime.isAfter(endTime)) {
       component.clearError();
-      return newTime;
+      return cleanNewTime;
     }
 
     if (isCrossingDay) {
-      const newTimeNextDay = newTime.add(1, 'day');
+      const newTimeNextDay = cleanNewTime.add(1, 'day');
       if (!newTimeNextDay.isBefore(startTime) && !newTimeNextDay.isAfter(endTime)) {
         component.clearError();
         return newTimeNextDay;

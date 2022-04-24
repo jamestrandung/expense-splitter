@@ -41,7 +41,7 @@ export const useDateTime = (initialValue) => {
     props: {
       value,
       onChange: (newValue) => {
-        setValue(newValue);
+        setValue(newValue.millisecond(0));
       },
     },
     inputProps: {
