@@ -133,8 +133,6 @@ function ParticipantList({
     onCompleteSession();
   };
 
-  console.log(styles.participantTime);
-
   return (
     <Grid container spacing={3} style={{ marginTop: '10px', marginBottom: '20px' }}>
       <Grid item xs={12}>
