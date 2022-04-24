@@ -188,11 +188,11 @@ function ParticipantList({
             <Table sx={{ minWidth: 650 }} stickyHeader>
               <TableHead>
                 <TableRow>
-                  <TableCell style={{ width: 10 }} />
                   <TableCell style={{ fontWeight: 'bold' }} className={styles.participantTime}>Start time</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }} className={styles.participantTime}>End time</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>Name</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>Payable</TableCell>
+                  <TableCell style={{ width: 10 }} />
                 </TableRow>
               </TableHead>
               <TableBody>

@@ -45,11 +45,6 @@ function Participant({
       hover
     >
       <TableCell>
-        <IconButton aria-label="delete" onClick={() => onDeleteParticipant(participant.id)}>
-          <DeleteIcon />
-        </IconButton>
-      </TableCell>
-      <TableCell>
         <TimePicker
           id={`startTime${participant.id}`}
           label="Start time"
@@ -116,6 +111,11 @@ function Participant({
         scope="row"
       >
         {`$${Math.round((payable + Number.EPSILON) * 100) / 100}`}
+      </TableCell>
+      <TableCell>
+        <IconButton aria-label="delete" onClick={() => onDeleteParticipant(participant.id)}>
+          <DeleteIcon />
+        </IconButton>
       </TableCell>
     </TableRow>
   );
