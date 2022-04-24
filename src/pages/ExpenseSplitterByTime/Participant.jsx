@@ -50,20 +50,6 @@ function Participant({
         </IconButton>
       </TableCell>
       <TableCell>
-        <TextField
-          id={`name${participant.id}`}
-          label="Name"
-          value={participant.name}
-          onChange={(e) => {
-            onUpdateParticipantDetails({
-              ...participant,
-              name: e.target.value,
-            });
-          }}
-          fullWidth
-        />
-      </TableCell>
-      <TableCell>
         <TimePicker
           id={`startTime${participant.id}`}
           label="Start time"
@@ -109,6 +95,20 @@ function Participant({
               fullWidth
             />
           )}
+        />
+      </TableCell>
+      <TableCell>
+        <TextField
+          id={`name${participant.id}`}
+          label="Name"
+          value={participant.name}
+          onChange={(e) => {
+            onUpdateParticipantDetails({
+              ...participant,
+              name: e.target.value,
+            });
+          }}
+          fullWidth
         />
       </TableCell>
       <TableCell

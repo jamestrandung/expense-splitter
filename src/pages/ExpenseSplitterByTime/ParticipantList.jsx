@@ -188,9 +188,9 @@ function ParticipantList({
               <TableHead>
                 <TableRow>
                   <TableCell style={{ width: '25px' }} />
-                  <TableCell style={{ fontWeight: 'bold' }}>Name</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>Start time</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>End time</TableCell>
+                  <TableCell style={{ fontWeight: 'bold' }}>Name</TableCell>
                   <TableCell style={{ fontWeight: 'bold' }}>Payable</TableCell>
                 </TableRow>
               </TableHead>
